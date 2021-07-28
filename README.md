@@ -71,7 +71,7 @@ The following demo demonstrate the appearance and functionality of the applicati
 
 You are required to submit BOTH of the following for review:
 
-* The URL of the functional, deployed application :
+* The URL of the functional, deployed application on Heroku : https://calm-coast-57125.herokuapp.com/
 
 * The URL of the GitHub repository : https://github.com/zahid267/book_search_engine
 
