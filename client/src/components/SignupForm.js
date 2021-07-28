@@ -19,7 +19,7 @@ const SignupForm = () => {
   const [showAlert, setShowAlert] = useState(false);
   // new lines
   // Invoke `useMutation()` hook to return a Promise-based function and data about the ADD_PROFILE mutation
-  const [addUser, { error }] = useMutation(ADD_USER);
+  const [addUser] = useMutation(ADD_USER);
   //console.log(error);
   // new line end
 
@@ -37,24 +37,12 @@ const SignupForm = () => {
       event.preventDefault();
       event.stopPropagation();
     }
-
-   /* try {
-      const response = await createUser(userFormData);// commented
-      if (!response.ok) {
-        throw new Error('something went wrong!');
-      }
-      const { token, user } = await response.json();
-      console.log(user);
-      Auth.login(token);
-    } catch (err) {
-      console.error(err);
-      setShowAlert(true);
-    }*/
+    
     try {
       const { data } = await addUser({
         variables: { ...userFormData },
       });
-
+      
       Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);

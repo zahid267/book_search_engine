@@ -25,8 +25,8 @@ const SearchBooks = () => {
 
   //new lines
   // Invoke `useMutation()` hook to return a Promise-based function and data about the ADD_PROFILE mutation
-  const [saveBook, { error }] = useMutation(SAVE_BOOK);
- // console.log(error);
+  const [saveBook] = useMutation(SAVE_BOOK);
+ 
   // new lines end
 
   // set up useEffect hook to save `savedBookIds` list to localStorage on component unmount
@@ -90,7 +90,7 @@ const SearchBooks = () => {
       const {data} = await saveBook({
         variables:{ bookData: {...bookToSave} }
       });
-      console.log(data);
+
      // if (!response.ok) {
       if (!data) {
         throw new Error('something went wrong!');

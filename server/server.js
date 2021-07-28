@@ -40,5 +40,6 @@ app.get('*', (req, res) => {
 })
 
 db.once('open', () => {
-  app.listen(PORT, () => console.log(`🌍 Server now listening on localhost:${PORT}`));
-});
+    app.listen(PORT, () => console.log(`🌍 Server now listening on localhost:${PORT}`));
+  });
+
